@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Google Search Meta Tags -->
+  <title>Matsya Sea Foods — Fresh Fish Delivery in Doddaballapura & Devanahalli</title>
+  <meta name="description" content="Order daily caught fresh sea fish online from Matsya Sea Foods. Cleaned, custom-cut, and delivered to your doorstep in Doddaballapura & Devanahalli. Free delivery up to 3km!">
+  <meta name="keywords" content="Matsya Sea Foods, fresh fish delivery Doddaballapura, fish shop Devanahalli, order fish online Bangalore rural, surmai, pomfret, prawns delivery">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Matsya Sea Foods — Fresh Sea Fish Delivered">
+  <meta property="og:description" content="Cleaned & custom-cut fresh sea fish delivered directly from our Doddaballapura & Devanahalli stores.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1200&q=80">
+
+  <style>
+    :root {
+      --primary: #0B3C5D;
+      --secondary: #328CC1;
+      --bg: #F4F7F6;
+      --white: #FFFFFF;
+      --accent: #D9514E;
+      --whatsapp: #25D366;
+      --text: #1D2731;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding-bottom: 80px; }
+    
+    /* Header & Navigation */
+    header { background: var(--primary); color: white; padding: 0.8rem 1rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .header-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    header h1 { font-size: 1.4rem; letter-spacing: 0.5px; }
+    
+    .store-select-wrap { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; }
+    .store-select-wrap select { padding: 0.4rem 0.5rem; border-radius: 4px; border: none; font-weight: 600; color: var(--primary); font-size: 0.85rem; }
+    
+    .cart-btn-head { background: var(--secondary); color: white; border: none; padding: 0.5rem 0.9rem; border-radius: 20px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.9rem; }
+    .cart-badge { background: var(--accent); color: white; border-radius: 50%; padding: 2px 7px; font-size: 0.75rem; }
+
+    /* Hero Banner */
+    .hero { 
+      background: linear-gradient(rgba(11,60,93,0.8), rgba(11,60,93,0.8)), url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1400&q=80') center/cover; 
+      color: white; 
+      padding: 2.5rem 1rem; 
+      text-align: center; 
+    }
+    .hero h2 { font-size: 1.8rem; margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+    .hero p { font-size: 1rem; margin-bottom: 1rem; opacity: 0.95; }
+    .banner-badge { background: var(--accent); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-weight: bold; display: inline-block; font-size: 0.8rem; box-shadow: 0 2px 5px rgba(0,0,0,0.2); margin-bottom: 0.8rem; }
+
+    .store-buttons { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 0.8rem; }
+    .btn-maps { background: rgba(255,255,255,0.2); color: white; border: 1px solid white; padding: 0.4rem 0.8rem; border-radius: 20px; text-decoration: none; font-size: 0.8rem; font-weight: 600; }
+
+    /* Main Container */
+    .container { max-width: 1100px; margin: 1.5rem auto; padding: 0 1rem; }
+
+    /* Search / Delivery Check */
+    .delivery-check { background: var(--white); padding: 1.2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 1.5rem; text-align: center; border-top: 4px solid var(--secondary); }
+    .check-box { display: flex; justify-content: center; gap: 6px; margin-top: 0.8rem; }
+    .delivery-check input { padding: 0.6rem; width: 65%; max-width: 280px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95rem; }
+    .delivery-check button { padding: 0.6rem 1rem; background: var(--secondary); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 0.95rem; }
+    #delivery-result { margin-top: 0.8rem; font-weight: bold; font-size: 0.95rem; }
+
+    /* Customer Address Card */
+    .address-card { background: var(--white); padding: 1.2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 1.5rem; border-top: 4px solid var(--primary); }
+    .address-card h3 { color: var(--primary); margin-bottom: 0.8rem; font-size: 1.1rem; }
+    .address-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+    .address-grid input, .address-card textarea { padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 0.9rem; width: 100%; }
+
+    /* Fish Grid */
+    .section-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .section-title h3 { font-size: 1.3rem; color: var(--primary); }
+    
+    .fish-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+    .card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; justify-content: space-between; }
+    .card-body { padding: 1.2rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+    .badge { background: #e3f2fd; color: #0d47a1; font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-block; width: fit-content; margin-bottom: 0.4rem; font-weight: 600; }
+    .card h4 { font-size: 1.15rem; margin-bottom: 0.2rem; color: var(--primary); }
+    .price { font-size: 1.2rem; color: var(--accent); font-weight: bold; margin: 0.4rem 0 0.8rem 0; }
+    
+    .select-label { font-size: 0.8rem; color:#555; display:block; margin-bottom: 3px; font-weight: 600; }
+    .select-dropdown { width: 100%; padding: 0.5rem; margin-bottom: 0.8rem; border: 1px solid #ccc; border-radius: 6px; font-size: 0.9rem; }
+    
+    .card-actions { display: flex; gap: 8px; }
+    .btn-add-cart { background: var(--primary); color: white; border: none; padding: 0.7rem; border-radius: 6px; font-weight: bold; flex: 1; cursor: pointer; font-size: 0.9rem; }
+    .btn-wa-direct { background: var(--whatsapp); color: white; border: none; padding: 0.7rem; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 0.9rem; text-decoration: none; text-align: center; }
+    .out-of-stock { background: #e0e0e0; color: #666; text-align: center; padding: 0.7rem; border-radius: 6px; font-weight: bold; width: 100%; }
+
+    /* Sliding Cart Drawer */
+    .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: none; }
+    .cart-drawer { position: fixed; top: 0; right: -100%; width: 100%; max-width: 380px; height: 100%; background: white; z-index: 1001; transition: 0.3s ease; display: flex; flex-direction: column; box-shadow: -2px 0 10px rgba(0,0,0,0.2); }
+    .cart-drawer.open { right: 0; }
+    
+    .cart-header { background: var(--primary); color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
+    .cart-close { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+    .cart-items { flex: 1; overflow-y: auto; padding: 1rem; }
+    .cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 1px solid #eee; }
+    .cart-item-info h5 { font-size: 0.95rem; color: var(--primary); }
+    .cart-item-info p { font-size: 0.8rem; color: #666; }
+    .cart-controls { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+    .btn-qty { background: #eee; border: none; width: 24px; height: 24px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    
+    .cart-footer { padding: 1rem; border-top: 1px solid #eee; background: #fafafa; }
+    .cart-total { display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1rem; margin-bottom: 1rem; color: var(--primary); }
+    .btn-checkout { background: var(--whatsapp); color: white; border: none; width: 100%; padding: 0.8rem; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; }
+
+    /* Admin Panel Section */
+    .admin-wrapper { margin-top: 3rem; background: var(--white); border-radius: 10px; padding: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border-top: 4px solid var(--primary); }
+    .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 5px; }
+    .admin-header h3 { color: var(--primary); font-size: 1.1rem; }
+    
+    .add-fish-form { background: #f9fbfb; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #e1e8e8; }
+    .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-bottom: 8px; }
+    .form-grid input { padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.85rem; }
+    .btn-primary { background: var(--primary); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 0.85rem; }
+
+    .admin-table { width: 100%; border-collapse: collapse; text-align: left; margin-top: 0.8rem; }
+    .admin-table th, .admin-table td { padding: 0.6rem; border-bottom: 1px solid #eee; font-size: 0.85rem; }
+    .admin-table th { background: #f4f7f6; color: var(--primary); }
+    .btn-danger { background: #ff4d4d; color: white; border: none; padding: 0.3rem 0.6rem; border-radius: 4px; cursor: pointer; }
+
+    /* Floating WhatsApp & Sticky Mobile Bar */
+    .mobile-cart-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--primary); color: white; padding: 0.8rem 1rem; display: flex; justify-content: space-between; align-items: center; z-index: 999; box-shadow: 0 -2px 10px rgba(0,0,0,0.15); }
+    .mobile-cart-bar button { background: var(--whatsapp); color: white; border: none; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; cursor: pointer; }
+
+    @media (min-width: 768px) {
+      .hero h2 { font-size: 2.3rem; }
+      .mobile-cart-bar { display: none; }
+      body { padding-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <h1>🐟 Matsya Sea Foods</h1>
+      
+      <div class="store-select-wrap">
+        <span>📍 Branch:</span>
+        <select id="header-store-select">
+          <option value="Doddaballapura">Doddaballapura</option>
+          <option value="Devanahalli">Devanahalli</option>
+        </select>
+      </div>
+
+      <button class="cart-btn-head" onclick="toggleCart()">
+        🛒 Cart <span class="cart-badge" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <span class="banner-badge">🌊 Sourced Fresh Daily</span>
+    <h2>Fresh Sea Fish to Your Doorstep</h2>
+    <p>Cleaned, custom-cut, and delivered directly from our stores.</p>
+    
+    <div class="store-buttons">
+      <a href="https://maps.google.com/?q=13.309999,77.542778" target="_blank" class="btn-maps">📍 Doddaballapura Map</a>
+      <a href="https://maps.app.goo.gl/4HCk2FCTTKYDQJ3g7" target="_blank" class="btn-maps">📍 Devanahalli Map</a>
+    </div>
+  </section>
+
+  <div class="container">
+    
+    <!-- Delivery Checker -->
+    <div class="delivery-check">
+      <h3>Check Home Delivery Availability</h3>
+      <p style="margin-top: 0.3rem; color: #555; font-size: 0.85rem;">Free delivery up to 3 km from Doddaballapura & Devanahalli hubs!</p>
+      <div class="check-box">
+        <input type="text" id="pin-input" placeholder="PIN code or Area (e.g. 561203)">
+        <button onclick="checkDelivery()">Check</button>
+      </div>
+      <div id="delivery-result"></div>
+    </div>
+
+    <!-- Customer Delivery Address Card -->
+    <div class="address-card">
+      <h3>🚚 Delivery Address Details</h3>
+      <p style="font-size: 0.8rem; color: #666; margin-bottom: 0.8rem;">Enter your address to automatically include it in your WhatsApp order.</p>
+      <div class="address-grid">
+        <input type="text" id="cust-name" placeholder="Full Name *">
+        <input type="text" id="cust-phone" placeholder="Phone Number *">
+        <input type="text" id="cust-pincode" placeholder="PIN Code / Area *">
+      </div>
+      <div style="margin-top: 8px;">
+        <textarea id="cust-address" rows="2" placeholder="Full House No., Building, Street / Landmark *"></textarea>
+      </div>
+    </div>
+
+    <!-- Storefront Items -->
+    <div class="section-title" id="inventory">
+      <h3>Today's Fresh Catch</h3>
+    </div>
+    <div class="fish-grid" id="fish-container"></div>
+
+    <!-- Admin / Store Manager Section -->
+    <div class="admin-wrapper">
+      <div class="admin-header">
+        <h3>⚙️ Store Manager Dashboard</h3>
+        <span style="font-size: 0.8rem; color: #666;">Update stock & per kg daily rates</span>
+      </div>
+
+      <!-- Add New Fish Form -->
+      <div class="add-fish-form">
+        <h4 style="margin-bottom: 0.6rem; color: var(--primary); font-size: 0.95rem;">Add New Item</h4>
+        <div class="form-grid">
+          <input type="text" id="new-name" placeholder="Fish Name">
+          <input type="number" id="new-price" placeholder="Price per kg (₹)">
+          <input type="text" id="new-badge" placeholder="Badge (e.g. Fresh)">
+        </div>
+        <input type="text" id="new-cuts" placeholder="Cuts (e.g. Steaks, Curry Cut, Whole)" style="width: 100%; padding: 0.5rem; margin-bottom: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 0.85rem;">
+        <button class="btn-primary" onclick="addFishItem()">+ Add to Store</button>
+      </div>
+
+      <!-- Existing Inventory Table -->
+      <div style="overflow-x: auto;">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Rate / kg</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="admin-container"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Cart Drawer Overlay -->
+  <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h4>🛒 Your Order Cart</h4>
+      <button class="cart-close" onclick="toggleCart()">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items-container"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total-price">₹0</span>
+      </div>
+      <button class="btn-checkout" onclick="checkoutCartWhatsApp()">Order Cart via WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- Sticky Mobile Bottom Bar -->
+  <div class="mobile-cart-bar">
+    <div>
+      <span style="font-size: 0.85rem;">Cart Total:</span>
+      <strong id="mobile-cart-total" style="font-size: 1.05rem; display: block;">₹0</strong>
+    </div>
+    <button onclick="toggleCart()">View Cart (<span id="mobile-cart-count">0</span>)</button>
+  </div>
+
+  <script>
+    let defaultFish = [
+      { id: 1, name: "Seer Fish (Surmai)", pricePerKg: 850, badge: "Top Seller", cuts: ["Steaks", "Curry Cut", "Whole"], available: true },
+      { id: 2, name: "White Pomfret", pricePerKg: 950, badge: "Fresh Today", cuts: ["Whole Cleaned", "Sliced"], available: true },
+      { id: 3, name: "Tiger Prawns", pricePerKg: 1300, badge: "Cleaned", cuts: ["Peeled & Deveined", "Whole"], available: true },
+      { id: 4, name: "Indian Salmon (Rawas)", pricePerKg: 900, badge: "Omega-3", cuts: ["Boneless Fillet", "Steak Cut"], available: true }
+    ];
+
+    // Options from 500g to 20kg
+    const weightOptions = [
+      { label: "500g (0.5 kg)", multiplier: 0.5 },
+      { label: "1 kg", multiplier: 1 },
+      { label: "1.5 kg", multiplier: 1.5 },
+      { label: "2 kg", multiplier: 2 },
+      { label: "2.5 kg", multiplier: 2.5 },
+      { label: "3 kg", multiplier: 3 },
+      { label: "4 kg", multiplier: 4 },
+      { label: "5 kg", multiplier: 5 },
+      { label: "6 kg", multiplier: 6 },
+      { label: "7 kg", multiplier: 7 },
+      { label: "8 kg", multiplier: 8 },
+      { label: "9 kg", multiplier: 9 },
+      { label: "10 kg", multiplier: 10 },
+      { label: "12 kg", multiplier: 12 },
+      { label: "15 kg", multiplier: 15 },
+      { label: "20 kg", multiplier: 20 }
+    ];
+
+    let servicedAreas = ["561203", "562110", "doddaballapura", "dodballapura", "devanahalli"];
+    let phoneNum = "919880074175";
+
+    let fishData = JSON.parse(localStorage.getItem('matsya_inventory')) || defaultFish;
+    let cart = JSON.parse(localStorage.getItem('matsya_cart')) || [];
+
+    function saveInventory() {
+      localStorage.setItem('matsya_inventory', JSON.stringify(fishData));
+      renderStorefront();
+      renderAdmin();
+    }
+
+    function saveCart() {
+      localStorage.setItem('matsya_cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    function renderStorefront() {
+      const container = document.getElementById('fish-container');
+      container.innerHTML = '';
+
+      fishData.forEach(item => {
+        const cutsOptions = item.cuts.map(c => `<option value="${c}">${c}</option>`).join('');
+        const weightOptsHtml = weightOptions.map(w => `<option value="${w.multiplier}">${w.label}</option>`).join('');
+
+        const cardHtml = `
+          <div class="card">
+            <div class="card-body">
+              <div>
+                <span class="badge">${item.badge || 'Fresh'}</span>
+                <h4>${item.name}</h4>
+                <div class="price">₹${item.pricePerKg} <small style="font-size:0.8rem; color:#666;">/ kg</small></div>
+              </div>
+              
+              <div>
+                ${item.available ? `
+                  <label class="select-label">Select Quantity / Weight:</label>
+                  <select class="select-dropdown" id="weight-${item.id}">
+                    ${weightOptsHtml}
+                  </select>
+
+                  <label class="select-label">Cut Preference:</label>
+                  <select class="select-dropdown" id="cut-${item.id}">
+                    ${cutsOptions}
+                  </select>
+
+                  <div class="card-actions">
+                    <button class="btn-add-cart" onclick="addToCart(${item.id})">+ Add to Cart</button>
+                    <button class="btn-wa-direct" onclick="orderWhatsAppDirect(${item.id})">WhatsApp</button>
+                  </div>
+                ` : `
+                  <div class="out-of-stock">Sold Out Today</div>
+                `}
+              </div>
+            </div>
+          </div>
+        `;
+        container.innerHTML += cardHtml;
+      });
+    }
+
+    function addToCart(id) {
+      const item = fishData.find(f => f.id === id);
+      const selectedCut = document.getElementById(`cut-${id}`).value;
+      const weightMult = parseFloat(document.getElementById(`weight-${id}`).value);
+      const weightObj = weightOptions.find(w => w.multiplier === weightMult);
+      
+      const itemPrice = Math.round(item.pricePerKg * weightMult);
+      const cartItemId = `${id}-${weightMult}-${selectedCut}`;
+
+      const existingIndex = cart.findIndex(c => c.cartItemId === cartItemId);
+      if (existingIndex > -1) {
+        cart[existingIndex].qty += 1;
+      } else {
+        cart.push({
+          cartItemId: cartItemId,
+          id: item.id,
+          name: item.name,
+          weightLabel: weightObj.label,
+          price: itemPrice,
+          cut: selectedCut,
+          qty: 1
+        });
+      }
+      saveCart();
+      toggleCart(true);
+    }
+
+    function updateQty(cartItemId, delta) {
+      const index = cart.findIndex(c => c.cartItemId === cartItemId);
+      if (index > -1) {
+        cart[index].qty += delta;
+        if (cart[index].qty <= 0) {
+          cart.splice(index, 1);
+        }
+      }
+      saveCart();
+    }
+
+    function updateCartUI() {
+      const cartItemsContainer = document.getElementById('cart-items-container');
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      document.getElementById('cart-count').innerText = totalCount;
+      document.getElementById('mobile-cart-count').innerText = totalCount;
+      document.getElementById('cart-total-price').innerText = `₹${totalPrice}`;
+      document.getElementById('mobile-cart-total').innerText = `₹${totalPrice}`;
+
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p style="text-align:center; color:#888; margin-top:2rem;">Your cart is empty.</p>';
+        return;
+      }
+
+      cartItemsContainer.innerHTML = '';
+      cart.forEach(item => {
+        cartItemsContainer.innerHTML += `
+          <div class="cart-item">
+            <div class="cart-item-info">
+              <h5>${item.name}</h5>
+              <p>Weight: <strong>${item.weightLabel}</strong> | Cut: ${item.cut}</p>
+              <div class="cart-controls">
+                <button class="btn-qty" onclick="updateQty('${item.cartItemId}', -1)">-</button>
+                <span>${item.qty} pack(s)</span>
+                <button class="btn-qty" onclick="updateQty('${item.cartItemId}', 1)">+</button>
+              </div>
+            </div>
+            <strong>₹${item.price * item.qty}</strong>
+          </div>
+        `;
+      });
+    }
+
+    function toggleCart(openState) {
+      const drawer = document.getElementById('cart-drawer');
+      const overlay = document.getElementById('cart-overlay');
+      if (openState === true || !drawer.classList.contains('open')) {
+        drawer.classList.add('open');
+        overlay.style.display = 'block';
+      } else {
+        drawer.classList.remove('open');
+        overlay.style.display = 'none';
+      }
+    }
+
+    function checkoutCartWhatsApp() {
+      if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+
+      const name = document.getElementById('cust-name').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const pincode = document.getElementById('cust-pincode').value.trim();
+      const address = document.getElementById('cust-address').value.trim();
+
+      if (!name || !phone || !address || !pincode) {
+        alert('Please fill out your Delivery Address details before placing an order!');
+        toggleCart(false);
+        document.querySelector('.address-card').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+
+      const selectedStore = document.getElementById('header-store-select').value;
+      let itemsList = '';
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+        itemsList += `${index + 1}. *${item.name}*\n   ⚖️ Weight: ${item.weightLabel} (${item.qty}x)\n   🔪 Cut: ${item.cut}\n   💰 ₹${itemTotal}\n`;
+      });
+
+      const message = `🛒 *NEW CART ORDER - MATSYA*\n\n` +
+                      `📍 *Store Branch:* ${selectedStore}\n\n` +
+                      `📋 *ORDER ITEMS:*\n${itemsList}\n` +
+                      `💵 *TOTAL AMOUNT:* ₹${total}\n\n` +
+                      `🚚 *DELIVERY ADDRESS:* \n` +
+                      `👤 *Name:* ${name}\n` +
+                      `📞 *Contact:* ${phone}\n` +
+                      `🏠 *Address:* ${address}\n` +
+                      `📌 *PIN / Area:* ${pincode}\n\n` +
+                      `Please confirm delivery time and payment details!`;
+
+      window.open(`https://wa.me/${phoneNum}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    function orderWhatsAppDirect(id) {
+      const name = document.getElementById('cust-name').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const pincode = document.getElementById('cust-pincode').value.trim();
+      const address = document.getElementById('cust-address').value.trim();
+
+      if (!name || !phone || !address || !pincode) {
+        alert('Please fill out your Delivery Address details before placing an order!');
+        document.querySelector('.address-card').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+
+      const item = fishData.find(f => f.id === id);
+      const selectedCut = document.getElementById(`cut-${id}`).value;
+      const weightMult = parseFloat(document.getElementById(`weight-${id}`).value);
+      const weightObj = weightOptions.find(w => w.multiplier === weightMult);
+      const totalPrice = Math.round(item.pricePerKg * weightMult);
+      const selectedStore = document.getElementById('header-store-select').value;
+      
+      const message = `🛒 *QUICK FISH ORDER - MATSYA*\n\n` +
+                      `📍 *Store Branch:* ${selectedStore}\n` +
+                      `🐟 *Item:* ${item.name}\n` +
+                      `⚖️ *Weight:* ${weightObj.label}\n` +
+                      `🔪 *Cut Preference:* ${selectedCut}\n` +
+                      `💰 *Total Price:* ₹${totalPrice} (at ₹${item.pricePerKg}/kg)\n\n` +
+                      `🚚 *DELIVERY ADDRESS:* \n` +
+                      `👤 *Name:* ${name}\n` +
+                      `📞 *Contact:* ${phone}\n` +
+                      `🏠 *Address:* ${address}\n` +
+                      `📌 *PIN / Area:* ${pincode}\n\n` +
+                      `Please confirm delivery time and payment details!`;
+
+      window.open(`https://wa.me/${phoneNum}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    function renderAdmin() {
+      const container = document.getElementById('admin-container');
+      container.innerHTML = '';
+
+      fishData.forEach(item => {
+        container.innerHTML += `
+          <tr>
+            <td><strong>${item.name}</strong></td>
+            <td>₹<input type="number" id="price-input-${item.id}" value="${item.pricePerKg}" style="width: 70px;"> / kg</td>
+            <td>
+              <select id="status-input-${item.id}" onchange="updateItem(${item.id})">
+                <option value="true" ${item.available ? 'selected' : ''}>In Stock</option>
+                <option value="false" ${!item.available ? 'selected' : ''}>Out</option>
+              </select>
+            </td>
+            <td>
+              <button class="btn-primary" onclick="updateItem(${item.id})">Save</button>
+              <button class="btn-danger" onclick="deleteItem(${item.id})">X</button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+
+    function updateItem(id) {
+      const newPrice = document.getElementById(`price-input-${id}`).value;
+      const newStatus = document.getElementById(`status-input-${id}`).value === "true";
+
+      const item = fishData.find(f => f.id === id);
+      if (item) {
+        item.pricePerKg = Number(newPrice);
+        item.available = newStatus;
+        saveInventory();
+      }
+    }
+
+    function addFishItem() {
+      const name = document.getElementById('new-name').value.trim();
+      const price = document.getElementById('new-price').value.trim();
+      const badge = document.getElementById('new-badge').value.trim() || 'Fresh Catch';
+      const cutsInput = document.getElementById('new-cuts').value.trim();
+
+      if (!name || !price) {
+        alert('Please enter fish name and price per kg!');
+        return;
+      }
+
+      const cuts = cutsInput ? cutsInput.split(',').map(c => c.trim()) : ["Whole", "Curry Cut"];
+      const newId = fishData.length > 0 ? Math.max(...fishData.map(f => f.id)) + 1 : 1;
+
+      fishData.push({
+        id: newId,
+        name: name,
+        pricePerKg: Number(price),
+        badge: badge,
+        cuts: cuts,
+        available: true
+      });
+
+      document.getElementById('new-name').value = '';
+      document.getElementById('new-price').value = '';
+      saveInventory();
+    }
+
+    function deleteItem(id) {
+      if (confirm('Remove this fish from inventory?')) {
+        fishData = fishData.filter(f => f.id !== id);
+        saveInventory();
+      }
+    }
+
+    function checkDelivery() {
+      const input = document.getElementById('pin-input').value.toLowerCase().trim();
+      const resultDiv = document.getElementById('delivery-result');
+      
+      if (!input) {
+        resultDiv.innerHTML = "<span style='color: orange;'>Please enter a PIN code.</span>";
+        return;
+      }
+
+      const isServiced = servicedAreas.some(area => input.includes(area));
+      if (isServiced) {
+        resultDiv.innerHTML = "<span style='color: #2e7d32;'>✓ Home Delivery Available!</span>";
+      } else {
+        resultDiv.innerHTML = "<span style='color: #c62828;'>✗ Area currently out of primary range. Contact via WhatsApp for special orders.</span>";
+      }
+    }
+
+    renderStorefront();
+    renderAdmin();
+    updateCartUI();
+  </script>
+</body>
+</html>
