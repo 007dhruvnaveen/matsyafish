@@ -190,16 +190,19 @@
         <textarea id="cust-address" rows="2" placeholder="Full House No., Building, Street / Landmark *"></textarea>
       </div>
     </div>
-
-    <!-- Storefront Items -->
+<!-- Storefront Items -->
     <div class="section-title" id="inventory">
       <h3>Today's Fresh Catch</h3>
     </div>
     <div class="fish-grid" id="fish-container"></div>
-
-    <!-- Admin / Store Manager Section -->
-    <div class="admin-wrapper">
-      <div class="admin-header">
+   <!-- Admin / Store Manager Section -->
+    <div style="text-align: center; margin: 20px 0;">
+  <button onclick="checkManagerAccess()" style="background-color: #333; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+    🔐 Store Manager Login
+  </button>
+</div>
+    <div class="admin-wrapper" id="manager-section" style="display: none;">
+   <div class="admin-header">
         <h3>⚙️ Store Manager Dashboard</h3>
         <span style="font-size: 0.8rem; color: #666;">Update stock & per kg daily rates</span>
       </div>
