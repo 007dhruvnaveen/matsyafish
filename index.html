@@ -601,6 +601,23 @@
     renderStorefront();
     renderAdmin();
     updateCartUI();
-  </script>
+  </script>const MANAGER_PASSWORD = "258724";
+
+function checkManagerAccess() {
+  // If already logged in this session, just open the manager panel
+  if (sessionStorage.getItem("isManager") === "true") {
+    document.getElementById("manager-section").style.display = "block";
+    return;
+  }
+
+  const input = prompt("Enter Store Manager Password:");
+  if (input === MANAGER_PASSWORD) {
+    alert("Access Granted!");
+    sessionStorage.setItem("isManager", "true");
+    document.getElementById("manager-section").style.display = "block";
+  } else if (input !== null) {
+    alert("Incorrect password!");
+  }
+}
 </body>
 </html>
